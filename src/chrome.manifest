@@ -2,7 +2,7 @@ content   xulschoolhello              jar:chrome/xulschoolhello.jar!/content/
 skin      xulschoolhello  classic/1.0 jar:chrome/xulschoolhello.jar!/skin/
 locale    xulschoolhello  en-US       jar:chrome/xulschoolhello.jar!/locale/en-US/
 
-style chrome://global/content/customizeToolbar.xul chrome://xulschoolhello/skin/toolbar.css
-style chrome://browser/content/browser.xul chrome://xulschoolhello/skin/toolbar.css
+style chrome://global/content/customizeToolbar.xul chrome://xulschoolhello/skin/all.css
+
 overlay chrome://browser/content/browser.xul  chrome://xulschoolhello/content/browserOverlay.xul
 
