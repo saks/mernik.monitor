@@ -19,7 +19,13 @@
   </stringbundleset>
 
   <toolbarpalette id="BrowserToolbarPalette">
-    <toolbarbutton oncommand="alert('it works')" id="xulschoolhello-hello-world-button" label="XXX" class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+    <toolbarbutton
+	    id="xulschoolhello-hello-world-button"
+	    class="toolbarbutton-1 chromeclass-toolbar-additional"
+	    tooltiptext="TOOLTIP!"
+	    label="XXX"
+	    oncommand="alert('it works')"
+	/>
   </toolbarpalette>
 
   <menupopup id="menu_ToolsPopup">
