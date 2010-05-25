@@ -1,0 +1,9 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#xulschoolhello-hello-world-button {
+  list-style-image: url("chrome://xulschoolhello/skin/hellow-world.png");
+}
+toolbar[iconsize="small"] #xulschoolhello-hello-world-button {
+  list-style-image: url("chrome://xulschoolhello/skin/hellow-world.png");
+}
+
