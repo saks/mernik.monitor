@@ -30,7 +30,7 @@ var myListener = {
 		if ('786448' == aFlag &&
 			(aFlag & (Mernik.Browser.STATE_IS_DOCUMENT|Mernik.Browser.STATE_STOP))) {
 			//DO ALL THE WORK after ONLOAD
-			Mernik.Monitor = new Mernik._MonitorClass();
+			Mernik.Monitor = new Mernik._MonitorClass(aProgress.DOMWindow);
 		};
 	},
 	onLocationChange:   function(a,b,c) {},
