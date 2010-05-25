@@ -7,3 +7,15 @@ toolbar[iconsize="small"] #xulschoolhello-hello-world-button {
   list-style-image: url("chrome://xulschoolhello/skin/hellow-world.png");
 }
 
+#mernik-monitor-counter-status-on-page.status_ok {
+  list-style-image: url("chrome://xulschoolhello/skin/status_ok.png");
+}
+
+#mernik-monitor-counter-status-on-page.status_no {
+  list-style-image: url("chrome://xulschoolhello/skin/status_no.png");
+}
+
+#mernik-monitor-counter-status-on-page.status_medium {
+  list-style-image: url("chrome://xulschoolhello/skin/status_wrong.png");
+}
+
