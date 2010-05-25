@@ -2,7 +2,7 @@
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
 <?xml-stylesheet type="text/css"
-  href="chrome://xulschoolhello/skin/browserOverlay.css" ?>
+  href="chrome://xulschoolhello/skin/all.css" ?>
 
 <!DOCTYPE overlay SYSTEM
   "chrome://xulschoolhello/locale/browserOverlay.dtd">
