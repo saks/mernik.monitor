@@ -2,4 +2,11 @@ content   xulschoolhello              jar:chrome/xulschoolhello.jar!/content/
 skin      xulschoolhello  classic/1.0 jar:chrome/xulschoolhello.jar!/skin/
 locale    xulschoolhello  en-US       jar:chrome/xulschoolhello.jar!/locale/en-US/
 
-overlay chrome://browser/content/browser.xul  chrome://xulschoolhello/content/browserOverlay.xul
+skin xulschoolhello classic/1.0 jar:chrome/xulschoolhello.jar!/skin/all/
+skin xulschoolhello-os classic/1.0 jar:chrome/xulschoolhello.jar!/skin/unix/
+skin xulschoolhello-os classic/1.0 jar:chrome/xulschoolhello.jar!/skin/win/    os=WINNT
+skin xulschoolhello-os classic/1.0 jar:chrome/xulschoolhello.jar!/skin/winaero/ os=WINNT osversion>=6
+skin xulschoolhello-os classic/1.0 jar:chrome/xulschoolhello.jar!/skin/mac/    os=Darwin
+
+style chrome://global/content/customizeToolbar.xul chrome://xulschoolhello/skin/toolbar.css
+
