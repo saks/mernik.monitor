@@ -18,6 +18,10 @@
       src="chrome://xulschoolhello/locale/browserOverlay.properties" />
   </stringbundleset>
 
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton oncommand="alert('it works')" id="xulschoolhello-hello-world-button" label="XXX" class="toolbarbutton-1 chromeclass-toolbar-additional"/>
+  </toolbarpalette>
+
   <menupopup id="menu_ToolsPopup">
     <menu id="xs-hw-hello-menu" label="&xulschoolhello.hello.label;"
       accesskey="&xulschoolhello.helloMenu.accesskey;"
