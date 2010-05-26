@@ -22,17 +22,74 @@
   <stringbundleset id="stringbundleset">
     <stringbundle id="xulschoolhello-string-bundle"
       src="chrome://xulschoolhello/locale/browserOverlay.properties" />
+    <stringbundle id="mernik-monitor-string-bundle"
+      src="chrome://xulschoolhello/locale/mernikMonitor.properties" />
   </stringbundleset>
 
   <toolbarpalette id="BrowserToolbarPalette">
-    <toolbarbutton
-	    id="mernik-monitor-counter-status-on-page"
-	    class="toolbarbutton-1 chromeclass-toolbar-additional status_ok"
-	    tooltiptext="counter status"
-	    label="counter status"
-	    oncommand="alert('it works')"
-		/>
 
+		<toolbaritem id="mernik-monitor-toolbar-item">
+		  <toolbarbutton
+			  id="mernik-monitor-counter-status-on-page"
+			  class="chromeclass-toolbar-additional status_unknown"
+			  tooltiptext="counter status"
+			  label="counter status"
+			  type="menu">
+
+			<menupopup id="mernik-monitor-counter-info-popup">
+				<listbox id="mernik-monitor-counter-info-popup-list" rows="6" width="470">
+					<listcols>
+						<listcol/>
+						<listcol flex="1" width="50"/>
+					</listcols>
+					<listitem>
+						<listcell label="&mernik.monitor.counterState.counterPresents;"></listcell>
+						<listcell><image
+								id="mernik-monitor-counter-info-popup-list-item-counterPresents"
+								src="chrome://xulschoolhello/skin/unknown.png" />
+						</listcell>
+					</listitem>
+					<listitem>
+						<listcell label="&mernik.monitor.counterState.containerPresents;"></listcell>
+						<listcell><image
+							src="chrome://xulschoolhello/skin/unknown.png"
+							id="mernik-monitor-counter-info-popup-list-item-containerPresents"/>
+						</listcell>
+					</listitem>
+					<listitem>
+						<listcell label="&mernik.monitor.counterState.imageLoaded;"></listcell>
+						<listcell><image
+							src="chrome://xulschoolhello/skin/unknown.png"
+							id="mernik-monitor-counter-info-popup-list-item-imageLoaded" />
+						</listcell>
+					</listitem>
+					<listitem>
+						<listcell label="&mernik.monitor.counterState.scriptLoaded;"></listcell>
+						<listcell><image
+							src="chrome://xulschoolhello/skin/unknown.png"
+							id="mernik-monitor-counter-info-popup-list-item-scriptLoaded" />
+						</listcell>
+					</listitem>
+					<listitem>
+						<listcell label="&mernik.monitor.counterState.siteId;"></listcell>
+						<listcell
+							id="mernik-monitor-counter-info-popup-list-item-siteId"
+							label="-1"><label value="xxx"/></listcell>
+					</listitem>
+				</listbox>
+			</menupopup>
+		</toolbarbutton>
+	 </toolbaritem>
+<!--
+				<menuitem label="Carcxvxc vx"/>
+				<menuitem label="Taxi xc vxcvxcvxcv"/>
+				<menuitem label="Bus xcvxcvxv   xxcvxcvxc" selected="true"/>
+				<menuitem label="Train"/>
+
+
+			<menulist label="Bus" id="mernik-monitor-counter-status-on-page" class="chromeclass-toolbar-additional status_ok">
+			</menulist>
+-->
 
     <toolbarbutton
 	    id="xulschoolhello-hello-world-button"
