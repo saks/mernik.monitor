@@ -15,7 +15,11 @@ toolbar[iconsize="small"] #xulschoolhello-hello-world-button {
   list-style-image: url("chrome://xulschoolhello/skin/status_no.png");
 }
 
-#mernik-monitor-counter-status-on-page.status_medium {
+#mernik-monitor-counter-status-on-page.status_wrong {
   list-style-image: url("chrome://xulschoolhello/skin/status_wrong.png");
+}
+
+#mernik-monitor-counter-status-on-page.status_unknown {
+  list-style-image: url("chrome://xulschoolhello/skin/status_unknown.png");
 }
 
