@@ -13,6 +13,8 @@
   <script type="application/x-javascript"
     src="chrome://xulschoolhello/content/base.js" />
   <script type="application/x-javascript"
+    src="chrome://xulschoolhello/content/mernik_browser.js" />
+  <script type="application/x-javascript"
     src="chrome://xulschoolhello/content/mernik_monitor_class.js" />
   <script type="application/x-javascript"
     src="chrome://xulschoolhello/content/browserOverlay.js" />
