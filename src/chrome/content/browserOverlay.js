@@ -24,22 +24,8 @@ XULSchoolChrome.BrowserOverlay = {
   }
 }
 
+Mernik.Monitor = new Mernik._MonitorClass
 
-var myListener = {
-	onStateChange:function(aProgress,aRequest,aFlag,aStatus) {
-		if ('786448' == aFlag &&
-			(aFlag & (Mernik.Browser.STATE_IS_DOCUMENT|Mernik.Browser.STATE_STOP))) {
-			//DO ALL THE WORK after ONLOAD
-			Mernik.Monitor = new Mernik._MonitorClass(aProgress.DOMWindow);
-		};
-	},
-	onLocationChange:   function(a,b,c) {},
-	onProgressChange:   function(a,b,c,d,e,f) {},
-	onStatusChange:     function(a,b,c,d) {},
-	onSecurityChange:   function(a,b,c) {},
-	onLinkIconAvailable:function(a) {}
-}
-
-Mernik.Browser.registerOnloadListener(myListener)
+Mernik.Browser.registerOnloadListener(Mernik.Monitor.listener)
 Mernik.Browser.init()
 

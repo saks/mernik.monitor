@@ -22,10 +22,36 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				status:            'no'
 			};
 
+			this.initListener();
+
+			dump("init mernik monitor\n")
+		},
+
+		initListener: function() {
+			var self = this;
+
+			this.listener = {
+				onStateChange:function(aProgress,aRequest,aFlag,aStatus) {
+					//FIXME: get out of hardcoded aFlag value
+					if ('786448' == aFlag) {
+						self.onDomLoaded(aProgress.DOMWindow);
+					};
+				},
+				onLocationChange:   function(a,b,c) {},
+				onProgressChange:   function(a,b,c,d,e,f) {},
+				onStatusChange:     function(a,b,c,d) {},
+				onSecurityChange:   function(a,b,c) {},
+				onLinkIconAvailable:function(a) {}
+			}
+		},
+
+		/*
+		* Fires when all dom content is loaded
+		*/
+		onDomLoaded: function(DOMWindow) {
 			this.window   = DOMWindow.wrappedJSObject;
 			this.document = this.window.document;
 			this.collectInfo()
-			dump("init mernik monitor\n")
 		},
 
 		collectInfo: function(){
