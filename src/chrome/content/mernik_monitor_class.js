@@ -24,11 +24,11 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 			this.window   = DOMWindow.wrappedJSObject;
 			this.document = this.window.document;
-			this.findMernikCounter()
+			this.collectInfo()
 			dump("init mernik monitor\n")
 		},
 
-		findMernikCounter: function(){
+		collectInfo: function(){
 			var self  = this, defaults = this.defaults,
 				scripts = this.document.getElementsByTagName('script'),
 				imageContainer = this.$(defaults.counterContainerId);
@@ -84,8 +84,8 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 			this.counterState[key] = value;
 		},
 
-		filter: function(array, callBack) {
-			return Array.prototype.filter.call(array, callBack);
+		filter: function(arrayLike, callBack) {
+			return Array.prototype.filter.call(arrayLike, callBack);
 		},
 
 		$: function(id) {
