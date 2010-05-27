@@ -15,7 +15,8 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				scriptServer: 's3.countby.com'
 			};
 
-			this.initListener();
+			this.initWindowStateListener();
+			this.initTabListener();
 
 			dump("init mernik monitor\n")
 		},
@@ -31,7 +32,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 			};
 		},
 
-		initListener: function() {
+		initWindowStateListener: function() {
 			var self = this;
 
 			this.listener = {
@@ -58,6 +59,17 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				onSecurityChange:   function(a,b,c) {},
 				onLinkIconAvailable:function(a) {}
 			}
+		},
+
+		/*
+		* Inits tab switching listener
+		*/
+		initTabListener: function() {
+			var self = this;
+			gBrowser.tabContainer.addEventListener("TabSelect", function(event) {
+				var window = gBrowser.getBrowserForTab(event.target).contentWindow;
+				self.onDomReady(window);
+			}, false);
 		},
 
 		/*
