@@ -46,7 +46,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 					if (!!(aFlag & Mernik.Browser.STATE_STOP) &&
 							!!(aFlag & Mernik.Browser.STATE_IS_WINDOW)) {
-						self.onDomLoaded(aProgress.DOMWindow);
+						self.onDomReady(aProgress.DOMWindow);
 						//log('STOP:' + aFlag)
 						return
 					};
@@ -72,7 +72,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		/*
 		* Fires when all dom content is loaded
 		*/
-		onDomLoaded: function(DOMWindow) {
+		onDomReady: function(DOMWindow) {
 			this._stringbundle = $("mernik-monitor-string-bundle");
 			this.window   = DOMWindow.wrappedJSObject;
 			this.document = this.window.document;
