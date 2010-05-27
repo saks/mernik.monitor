@@ -23,3 +23,7 @@ toolbar[iconsize="small"] #xulschoolhello-hello-world-button {
   list-style-image: url("chrome://xulschoolhello/skin/status_unknown.png");
 }
 
+#mernik-monitor-counter-status-on-page.status_loading {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+}
+

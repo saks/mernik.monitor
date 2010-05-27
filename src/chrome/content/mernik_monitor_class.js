@@ -27,7 +27,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				imageLoaded:       false,
 				scriptLoaded:      false,
 				siteId:            -1,
-				status:            'no'
+				status:            'unknown'
 			};
 		},
 
@@ -36,10 +36,21 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 			this.listener = {
 				onStateChange:function(aProgress,aRequest,aFlag,aStatus) {
-					//FIXME: get out of hardcoded aFlag value
-					if ('786448' == aFlag) {
-						self.onDomLoaded(aProgress.DOMWindow);
+
+					if (!!(aFlag & Mernik.Browser.STATE_START) &&
+							!!(aFlag & Mernik.Browser.STATE_IS_WINDOW)) {
+						//log('START:' + aFlag)
+						self.startLoading();
+						return
 					};
+
+					if (!!(aFlag & Mernik.Browser.STATE_STOP) &&
+							!!(aFlag & Mernik.Browser.STATE_IS_WINDOW)) {
+						self.onDomLoaded(aProgress.DOMWindow);
+						//log('STOP:' + aFlag)
+						return
+					};
+
 				},
 				onLocationChange:   function(a,b,c) {},
 				onProgressChange:   function(a,b,c,d,e,f) {},
@@ -47,6 +58,15 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				onSecurityChange:   function(a,b,c) {},
 				onLinkIconAvailable:function(a) {}
 			}
+		},
+
+		/*
+		* Fires when new page loading started
+		*/
+		startLoading: function() {
+			this.resetCounterState();
+			this.changeCounterState('status', 'loading');
+			this.highlightToolbarButton();
 		},
 
 		/*
@@ -69,6 +89,8 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 			button.classList.remove('status_ok');
 			button.classList.remove('status_no');
 			button.classList.remove('status_wrong');
+			button.classList.remove('status_loading');
+			button.classList.remove('status_unknown');
 			button.classList.add(newClass);
 		},
 
@@ -142,9 +164,11 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 			if (this.counterState.siteId &&
 				this.counterState.imageLoaded &&
 				this.counterState.containerPresents ) {
-					this.changeCounterState('status', 'ok');
+				this.changeCounterState('status', 'ok');
 			} else if (this.counterState.counterPresents) {
 				this.changeCounterState('status', 'wrong');
+			} else {
+				this.changeCounterState('status', 'no');
 			};
 
 		},
