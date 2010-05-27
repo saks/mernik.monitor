@@ -28,7 +28,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 				imageLoaded:       false,
 				scriptLoaded:      false,
 				siteId:            -1,
-				status:            'unknown'
+				status:            'loading'
 			};
 		},
 
