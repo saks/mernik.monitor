@@ -1,8 +1,8 @@
-content   xulschoolhello              jar:chrome/xulschoolhello.jar!/content/
-skin      xulschoolhello  classic/1.0 jar:chrome/xulschoolhello.jar!/skin/
-locale    xulschoolhello  en-US       jar:chrome/xulschoolhello.jar!/locale/en-US/
+content   mernik_monitor_dev              jar:chrome/mernik_monitor_dev.jar!/content/
+skin      mernik_monitor_dev  classic/1.0 jar:chrome/mernik_monitor_dev.jar!/skin/
+locale    mernik_monitor_dev  en-US       jar:chrome/mernik_monitor_dev.jar!/locale/en-US/
 
-style chrome://global/content/customizeToolbar.xul chrome://xulschoolhello/skin/all.css
+style chrome://global/content/customizeToolbar.xul chrome://mernik_monitor_dev/skin/all.css
 
-overlay chrome://browser/content/browser.xul  chrome://xulschoolhello/content/browserOverlay.xul
+overlay chrome://browser/content/browser.xul  chrome://mernik_monitor_dev/content/browserOverlay.xul
 

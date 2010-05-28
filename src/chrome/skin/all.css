@@ -4,27 +4,20 @@
 /*	width: 55px;*/
 /*}*/
 
-#xulschoolhello-hello-world-button {
-	list-style-image: url("chrome://xulschoolhello/skin/hellow-world.png");
-}
-toolbar[iconsize="small"] #xulschoolhello-hello-world-button {
-	list-style-image: url("chrome://xulschoolhello/skin/hellow-world.png");
-}
-
 #mernik-monitor-counter-status-on-page.status_ok {
-	list-style-image: url("chrome://xulschoolhello/skin/status_ok.png");
+	list-style-image: url("chrome://mernik_monitor_dev/skin/status_ok.png");
 }
 
 #mernik-monitor-counter-status-on-page.status_no {
-	list-style-image: url("chrome://xulschoolhello/skin/status_no.png");
+	list-style-image: url("chrome://mernik_monitor_dev/skin/status_no.png");
 }
 
 #mernik-monitor-counter-status-on-page.status_wrong {
-	list-style-image: url("chrome://xulschoolhello/skin/status_wrong.png");
+	list-style-image: url("chrome://mernik_monitor_dev/skin/status_wrong.png");
 }
 
 #mernik-monitor-counter-status-on-page.status_unknown {
-	list-style-image: url("chrome://xulschoolhello/skin/status_unknown.png");
+	list-style-image: url("chrome://mernik_monitor_dev/skin/status_unknown.png");
 }
 
 #mernik-monitor-counter-status-on-page.status_loading {

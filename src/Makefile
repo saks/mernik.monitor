@@ -1,8 +1,8 @@
 # The name of the extension.
-extension_name := xulschoolhello
+extension_name := mernik_monitor_dev
 
 # The UUID of the extension.
-extension_uuid := helloworld@xulschool.com
+extension_uuid := mernik_monitor_dev@mernik.by
 
 # The name of the profile dir where the extension can be installed.
 profile_dir := xulschool-dev
@@ -14,7 +14,7 @@ ZIP := zip
 bin_dir := ../bin
 
 # The target XPI file.
-xpi_file := $(bin_dir)/$(extension_name)2.xpi
+xpi_file := $(bin_dir)/$(extension_name).xpi
 
 # The type of operating system this make command is running on.
 os_type := $(patsubst darwin%,darwin,$(shell echo $(OSTYPE)))
@@ -90,3 +90,4 @@ $(build_dir):
   then \
     mkdir $(build_dir); \
   fi
+

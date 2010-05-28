@@ -2,28 +2,28 @@
 
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
 <?xml-stylesheet type="text/css"
-	href="chrome://xulschoolhello/skin/all.css" ?>
+	href="chrome://mernik_monitor_dev/skin/all.css" ?>
 
 <!DOCTYPE overlay SYSTEM
-	"chrome://xulschoolhello/locale/browserOverlay.dtd">
+	"chrome://mernik_monitor_dev/locale/browserOverlay.dtd">
 
-<overlay id="xulschoolhello-browser-overlay"
+<overlay id="mernik_monitor_dev-browser-overlay"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 	<script type="application/x-javascript"
-		src="chrome://xulschoolhello/content/base.js" />
+		src="chrome://mernik_monitor_dev/content/base.js" />
 	<script type="application/x-javascript"
-		src="chrome://xulschoolhello/content/mernik_browser.js" />
+		src="chrome://mernik_monitor_dev/content/mernik_browser.js" />
 	<script type="application/x-javascript"
-		src="chrome://xulschoolhello/content/mernik_monitor_class.js" />
+		src="chrome://mernik_monitor_dev/content/mernik_monitor_class.js" />
 	<script type="application/x-javascript"
-		src="chrome://xulschoolhello/content/browserOverlay.js" />
+		src="chrome://mernik_monitor_dev/content/browserOverlay.js" />
 
 	<stringbundleset id="stringbundleset">
-		<stringbundle id="xulschoolhello-string-bundle"
-			src="chrome://xulschoolhello/locale/browserOverlay.properties" />
+		<stringbundle id="mernik_monitor_dev-string-bundle"
+			src="chrome://mernik_monitor_dev/locale/browserOverlay.properties" />
 		<stringbundle id="mernik-monitor-string-bundle"
-			src="chrome://xulschoolhello/locale/mernikMonitor.properties" />
+			src="chrome://mernik_monitor_dev/locale/mernikMonitor.properties" />
 	</stringbundleset>
 
 	<toolbarpalette id="BrowserToolbarPalette">
@@ -46,27 +46,27 @@
 						<listcell label="&mernik.monitor.counterState.counterPresents;"></listcell>
 						<listcell><image
 								id="mernik-monitor-counter-info-popup-list-item-counterPresents"
-								src="chrome://xulschoolhello/skin/unknown.png" />
+								src="chrome://mernik_monitor_dev/skin/unknown.png" />
 						</listcell>
 					</listitem>
 					<listitem>
 						<listcell label="&mernik.monitor.counterState.containerPresents;"></listcell>
 						<listcell><image
-							src="chrome://xulschoolhello/skin/unknown.png"
+							src="chrome://mernik_monitor_dev/skin/unknown.png"
 							id="mernik-monitor-counter-info-popup-list-item-containerPresents"/>
 						</listcell>
 					</listitem>
 					<listitem>
 						<listcell label="&mernik.monitor.counterState.imageLoaded;"></listcell>
 						<listcell><image
-							src="chrome://xulschoolhello/skin/unknown.png"
+							src="chrome://mernik_monitor_dev/skin/unknown.png"
 							id="mernik-monitor-counter-info-popup-list-item-imageLoaded" />
 						</listcell>
 					</listitem>
 					<listitem>
 						<listcell label="&mernik.monitor.counterState.scriptLoaded;"></listcell>
 						<listcell><image
-							src="chrome://xulschoolhello/skin/unknown.png"
+							src="chrome://mernik_monitor_dev/skin/unknown.png"
 							id="mernik-monitor-counter-info-popup-list-item-scriptLoaded" />
 						</listcell>
 					</listitem>

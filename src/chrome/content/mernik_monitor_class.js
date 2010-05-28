@@ -115,7 +115,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		populateToolbarItem: function() {
 			var list = $('mernik-monitor-counter-info-popup-list'),
 				idPrefix = 'mernik-monitor-counter-info-popup-list-item-',
-				srcPrefix = 'chrome://xulschoolhello/skin/',
+				srcPrefix = 'chrome://mernik_monitor_dev/skin/',
 				uri;
 
 

@@ -4,12 +4,12 @@
   xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>helloworld@xulschool.com</em:id>
-    <em:name>XUL School Hello World</em:name>
-    <em:description>Welcome to XUL School!</em:description>
+    <em:id>mernik_monitor_dev@mernik.by</em:id>
+    <em:name>Mernik Monitor Dev Version</em:name>
+    <em:description>Helps to figure out about mernik counter state on the page</em:description>
     <em:version>0.1</em:version>
-    <em:creator>Appcoast</em:creator>
-    <em:homepageURL>https://developer.mozilla.org/en/XUL_School</em:homepageURL>
+    <em:creator>saksmlz</em:creator>
+    <em:homepageURL>http://mernik.by</em:homepageURL>
     <em:type>2</em:type>
 
     <!-- Mozilla Firefox -->
@@ -22,3 +22,4 @@
     </em:targetApplication>
   </Description>
 </RDF>
+
