@@ -174,7 +174,8 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 
 			/* parse page for mernik counter */
-			if (/mernik\scounter\sstart/.test(this.document.body.innerHTML)) {
+			if (this.document.body &&
+				/mernik\scounter\sstart/.test(this.document.body.innerHTML)) {
 				this.changeCounterState('counterPresents', true);
 			};
 
