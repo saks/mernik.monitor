@@ -1,7 +1,3 @@
-<!ENTITY xulschoolhello.hello.label            "Hello World by saks!">
-<!ENTITY xulschoolhello.helloMenu.accesskey    "l">
-<!ENTITY xulschoolhello.helloItem.accesskey    "H">
-
 <!ENTITY mernik.monitor.counterState.counterPresents "код счётчика присуствует на странице">
 <!ENTITY mernik.monitor.counterState.containerPresents "контейнер для картинки счётчика присуствует на странице">
 <!ENTITY mernik.monitor.counterState.imageLoaded "картинка счётчика загружена">

@@ -80,37 +80,6 @@
 			</menupopup>
 		</toolbarbutton>
 	 </toolbaritem>
-<!--
-				<menuitem label="Carcxvxc vx"/>
-				<menuitem label="Taxi xc vxcvxcvxcv"/>
-				<menuitem label="Bus xcvxcvxv   xxcvxcvxc" selected="true"/>
-				<menuitem label="Train"/>
-
-
-			<menulist label="Bus" id="mernik-monitor-counter-status-on-page" class="chromeclass-toolbar-additional status_ok">
-			</menulist>
--->
-
-    <toolbarbutton
-	    id="xulschoolhello-hello-world-button"
-	    class="toolbarbutton-1 chromeclass-toolbar-additional"
-	    tooltiptext="TOOLTIP!"
-	    label="XXX"
-	    oncommand="alert('it works')"
-		/>
   </toolbarpalette>
-
-  <menupopup id="menu_ToolsPopup">
-    <menu id="xs-hw-hello-menu" label="&xulschoolhello.hello.label;"
-      accesskey="&xulschoolhello.helloMenu.accesskey;"
-      insertafter="javascriptConsole,devToolsSeparator">
-      <menupopup>
-        <menuitem id="xulschoolhello-hello-menu-item"
-          label="&xulschoolhello.hello.label;"
-          accesskey="&xulschoolhello.helloItem.accesskey;"
-          oncommand="XULSchoolChrome.BrowserOverlay.sayHello(event);" />
-      </menupopup>
-    </menu>
-  </menupopup>
 </overlay>
 

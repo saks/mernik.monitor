@@ -17,8 +17,6 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 			this.initWindowStateListener();
 			this.initTabListener();
-
-			dump("init mernik monitor\n")
 		},
 
 		resetCounterState: function() {
