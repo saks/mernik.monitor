@@ -67,8 +67,16 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		initTabListener: function() {
 			var self = this;
 			gBrowser.tabContainer.addEventListener("TabSelect", function(event) {
-				var window = gBrowser.getBrowserForTab(event.target).contentWindow;
-				self.onDomReady(window);
+				var browser  = gBrowser.getBrowserForTab(event.target),
+					window     = browser.contentWindow,
+					loadingNow = browser.webProgress.isLoadingDocument;
+
+				if (loadingNow) {
+					self.changeCounterState('status', 'loading');
+					self.highlightToolbarButton();
+				} else {
+					self.onDomReady(window);
+				}
 			}, false);
 		},
 
