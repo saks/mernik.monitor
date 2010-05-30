@@ -8,6 +8,7 @@ if ('undefined' == typeof(Mernik._PageAnalizerClass)) {
 
 		MernikNamespace._PageAnalizerClass = function(monitor) {
 			this.init(monitor);
+			this.constructor = MernikNamespace._PageAnalizerClass;
 		}
 
 		MernikNamespace._PageAnalizerClass.prototype = {

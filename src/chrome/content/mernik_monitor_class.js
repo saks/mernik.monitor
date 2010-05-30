@@ -20,6 +20,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 	Mernik._MonitorClass = function() {
 		this.init();
+		this.constructor = Mernik._MonitorClass;
 	};
 
 	Mernik._MonitorClass.prototype = {

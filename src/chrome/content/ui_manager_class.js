@@ -27,6 +27,7 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 
 		MernikNamespace._UIManagerClass = function(monitor) {
 			this.init(monitor);
+			this.constructor = MernikNamespace._UIManagerClass;
 		}
 
 		MernikNamespace._UIManagerClass.prototype = {
