@@ -1,9 +1,9 @@
 if ('undefined' == typeof(Mernik._PageCounterClass)) {
 	(function(globalNamespace){
-		//TODO: add support for rambler, zero.kz
+		//TODO: add support for zero.kz
 
 		var MernikNamespace = globalNamespace.Mernik,
-			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru'];
+			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler'];
 
 		Mernik._PageCounterClass = function(id, params) {
 			if (supportedIDS.indexOf(id) == -1)
@@ -44,19 +44,26 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					this.statURL = 'http://stat.akavita.com/stat/stat.pl?id=' + siteId + '&lang=ru';
 				} else if ('li' == this.id) {
 					this.statURL = 'http://www.liveinternet.ru/stat/' + params.document.location.host
+
 				} else if ('mailru' == this.id) {
 					let siteId = this.constructor.MAILRU_RE.exec(params.pageHTML)[1];
 					this.statURL = 'http://top.mail.ru/rating?id=' + siteId;
+
+				} else if ('rambler' == this.id) {
+					let siteId = this.constructor.RAMBLER_RE.exec(params.pageHTML)[1];
+					this.statURL = 'http://top100.rambler.ru/resStats/' + siteId;
+
 				}
 			}
 
 		};
 
 		var couterSearchCriteria = [
-			[/mernik\scounter/,        'mernik'],
-			[/Akavita\scounter/,      'akavita'],
-			[/LiveInternet\scounter/,      'li'],
-			[/top\.list\.ru\/counter/, 'mailru']
+			[/mernik\scounter/,               'mernik'],
+			[/Akavita\scounter/,             'akavita'],
+			[/LiveInternet\scounter/,             'li'],
+			[/top\.list\.ru\/counter/,        'mailru'],
+			[/counter\.rambler\.ru\/top100/, 'rambler']
 		];
 
 		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
@@ -87,7 +94,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		/* constants */
 
 		Mernik._PageCounterClass.AKAVITA_RE = /lik\?id=(\d+)/;
-		Mernik._PageCounterClass.MAILRU_RE = /top\.list\.ru.*id=(\d+)/;
+		Mernik._PageCounterClass.MAILRU_RE  = /top\.list\.ru.*id=(\d+)/;
+		Mernik._PageCounterClass.RAMBLER_RE = /counter\.rambler\.ru\/top100\.cnt\?(\d+)/;
 
 	}(window))
 }
