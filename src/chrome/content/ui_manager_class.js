@@ -62,9 +62,15 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					pageCounters = state.pageCounters;
 				}
 
-			 this.highlightToolbarButton(counterState.toolbarButtonState);
-			 this.updatePopup(counterState);
-			 this.fillCounters(pageCounters);
+				if (!(counterState && pageCounters)) {
+					log("invalid state was passed:")
+					log(state);
+					return
+				};
+
+				this.highlightToolbarButton(counterState.toolbarButtonState);
+				this.updatePopup(counterState);
+				this.fillCounters(pageCounters);
 			},
 
 
