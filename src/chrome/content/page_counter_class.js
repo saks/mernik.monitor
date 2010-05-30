@@ -19,16 +19,19 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					this.name    = 'unknown'
 					this.siteId  = -1;
 					this.statURL = '';
+
 				} else if ('loading' == this.id) {
 					/* loading state for mernik monitor */
 					this.name    = 'loading'
 					this.siteId  = -1;
 					this.statURL = '';
+
 				} else if ('mernik' == this.id) {
 					/* mernik counter */
 					this.name    = 'mernik';
 					this.siteId  = params.window.SID;
 					this.statURL = 'http://top.mernik.by';
+
 				} else if ('akavita' == this.id) {
 					/* akavita counter */
 					this.name    = 'akavita';
