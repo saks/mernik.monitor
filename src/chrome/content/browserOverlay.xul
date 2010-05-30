@@ -97,10 +97,9 @@
 				label="page counters"
 				type="menu">
 				<menupopup id="mernik-monitor-page-counters-container">
-					<!--<menuitem>
-						<image src="chrome://mernik_monitor_dev/skin/mernik_counter_logo.png" /><label value="mernik" />
+					<menuitem>
+						<image src="chrome://global/skin/icons/question-16.png" /><label value="unknown" />
 					</menuitem>
-					-->
 				</menupopup>
 			</toolbarbutton>
 		</toolbaritem>
