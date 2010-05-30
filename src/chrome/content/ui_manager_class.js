@@ -51,9 +51,6 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 			* Object: contains info about state for each widget
 			*/
 			setState: function(state) {
-				log('ui.setState called, newState:');
-				log(state);
-
 				var counterState, pageCounters;
 
 				// rewrite state with predefined state by shortcut
@@ -121,8 +118,6 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 						label      = document.createElement('label'),
 						oncommand  = (counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")),
 						imageURI   = (counter.imageURI || (imageSrcPrefix + counter.id + "_counter_logo.png"));
-
-					log()
 
 					image.setAttribute('src', imageURI);
 					label.setAttribute('value', counter.id);
