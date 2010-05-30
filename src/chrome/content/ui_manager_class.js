@@ -2,7 +2,7 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 	(function(globalNamespace){
 		var MernikNamespace = globalNamespace.Mernik;
 
-		stateShortcuts = {
+		counterStateShortcuts = {
 			unknown: {
 				counterPresents:    'unknown',
 				containerPresents:  'unknown',
@@ -20,6 +20,11 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 				siteId:             -1,
 				toolbarButtonState: 'loading'
 			}
+		},
+
+		pageCountersShortcuts = {
+			unknown: [new MernikNamespace._PageCounterClass('unknown', {})],
+			loading: [new MernikNamespace._PageCounterClass('loading', {})],
 		},
 
 		// all available toolbar button statuses
@@ -46,23 +51,20 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 			* Object: contains info about state for each widget
 			*/
 			setState: function(state) {
-				//log(state)
-				if (!$('mernik-monitor-toolbar-item')) {
-					//log('no toolbaritem')
-					return;
-				}
+				var counterState, pageCounters;
 
 				// rewrite state with predefined state by shortcut
-				if ('string' == typeof(state)) state = stateShortcuts[state];
-
-				//return if no state was passed or not valid shortcut used
-				if (!state) {
-					//log("invalid state passed to ui.setState: " + state);
-					return;
+				if ('string' == typeof(state)) {
+					counterState = counterStateShortcuts[state];
+					pageCounters = pageCountersShortcuts[state];
+				} else {
+					counterState = state.counterState;
+					pageCounters = state.pageCounters;
 				}
 
-			 this.highlightToolbarButton(state.toolbarButtonState);
-			 this.updatePopup(state)
+			 this.highlightToolbarButton(counterState.toolbarButtonState);
+			 this.updatePopup(counterState);
+			 this.fillCounters(pageCounters);
 			},
 
 
