@@ -16,35 +16,6 @@ if ('undefined' == typeof(Mernik._PageAnalizerClass)) {
 				this.monitor = monitor;
 			},
 
-			getPageCountes: function(DOMWindow) {
-				var _window_   = DOMWindow.wrappedJSObject,
-				    _document_ = _window_.document,
-				    pageHTML   = _document_.body.innerHTML,
-				    counters   = [],
-				    params     = {window: _window_, document: _document_, pageHTML: pageHTML},
-				    counter;
-
-				/* mernik counter */
-				if (MernikNamespace._PageCounterClass.MERNIK_RE.test(pageHTML)) {
-					try {
-						counters.push(new MernikNamespace._PageCounterClass('mernik', params))
-					} catch(error) {
-						log(error.message)
-					}
-				};
-
-				/* akavita counter */
-				if (MernikNamespace._PageCounterClass.AKAVITA_RE.test(pageHTML)) {
-					try {
-						counters.push(new MernikNamespace._PageCounterClass('akavita', params))
-					} catch(error) {
-						log(error.message)
-					}
-				};
-
-				return counters
-			},
-
 			/*
 			* Analizes page and returns new mernik monitor status
 			*/

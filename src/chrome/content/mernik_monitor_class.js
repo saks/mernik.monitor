@@ -86,7 +86,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		* Fires when all dom content is loaded
 		*/
 		onDomReady: function(DOMWindow) {
-			var pageCounters = this.pageAnalizer.getPageCountes(DOMWindow);
+			var pageCounters = Mernik._PageCounterClass.getPageCountes(DOMWindow);
 			if (0 == pageCounters.length) {
 				pageCounters = [new Mernik._PageCounterClass('unknown', {})]
 			};

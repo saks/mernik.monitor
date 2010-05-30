@@ -1,7 +1,9 @@
 if ('undefined' == typeof(Mernik._PageCounterClass)) {
 	(function(globalNamespace){
+		//TODO: add support for mailru, rambler, zero.kz
+
 		var MernikNamespace = globalNamespace.Mernik,
-			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita'];
+			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li'];
 
 		Mernik._PageCounterClass = function(id, params) {
 			if (supportedIDS.indexOf(id) == -1)
@@ -16,43 +18,71 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			init: function(params) {
 				if ('unknown' == this.id) {
 					/* unknown state for mernik monitor */
-					this.siteId    = undefined;
 					this.statURL   = undefined;
 					this.oncommand = 'void 0';
 					this.imageURI  = 'chrome://global/skin/icons/question-16.png';
 
 				} else if ('loading' == this.id) {
 					/* loading state for mernik monitor */
-					this.siteId    = undefined;
 					this.statURL   = undefined;
 					this.oncommand = 'void 0';
 					this.imageURI  = 'chrome://global/skin/icons/loading_16.png';
 
 				} else if ('mernik' == this.id) {
 					/* mernik counter */
-					this.siteId  = params.window.SID;
 					this.statURL = 'http://top.mernik.by';
 
 				} else if ('akavita' == this.id) {
 					/* akavita counter */
-					this.siteId  = params.window.AC_ID;
+					let siteId  = params.window.AC_ID;
 
 					/* parce site id from page source for old counter version */
-					if (!this.siteId && this.constructor.AKAVITA_RE1.test(params.pageHTML)) {
-						this.siteId = this.constructor.AKAVITA_RE1.exec(params.pageHTML)[1];
+					if (!siteId && this.constructor.AKAVITA_RE.test(params.pageHTML)) {
+						siteId = this.constructor.AKAVITA_RE.exec(params.pageHTML)[1];
 					};
 
-					this.statURL = 'http://stat.akavita.com/stat/stat.pl?id=' + this.siteId + '&lang=ru';
+					this.statURL = 'http://stat.akavita.com/stat/stat.pl?id=' + siteId + '&lang=ru';
+				} else if ('li' == this.id) {
+					this.statURL = 'http://www.liveinternet.ru/stat/' + params.document.location.host
 				}
 			}
 
 		};
 
+		var couterSearchCriteria = [
+			[/mernik\scounter/,       'mernik'],
+			[/Akavita\scounter/,     'akavita'],
+			[/LiveInternet\scounter/,     'li']
+		];
+
+		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
+			var _window_ = DOMWindow.wrappedJSObject,
+				_document_ = _window_.document,
+				pageHTML   = _document_.body.innerHTML,
+				counters   = [],
+				params     = {window: _window_, document: _document_, pageHTML: pageHTML};
+
+			couterSearchCriteria.forEach(function(array) {
+				let re = array[0], id = array[1];
+
+				if (re.test(pageHTML)) {
+					try {
+						counters.push(new MernikNamespace._PageCounterClass(id, params))
+					} catch(error) {
+						log("Error accured while adding counter `" + id + '`, ' + error.message)
+					}
+				};
+
+			})
+
+			return counters
+		}
+
+
+
 		/* constants */
 
-		Mernik._PageCounterClass.MERNIK_RE   = /mernik\scounter\sstart/;
-		Mernik._PageCounterClass.AKAVITA_RE  = /Akavita\scounter/;
-		Mernik._PageCounterClass.AKAVITA_RE1 = /lik\?id=(\d+)/;
+		Mernik._PageCounterClass.AKAVITA_RE = /lik\?id=(\d+)/;
 
 	}(window))
 }
