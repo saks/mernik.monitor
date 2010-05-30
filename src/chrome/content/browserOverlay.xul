@@ -21,6 +21,8 @@
 	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/mernik_monitor_class.js" />
 	<script type="application/x-javascript"
+		src="chrome://mernik_monitor_dev/content/page_counter_class.js" />
+	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/browserOverlay.js" />
 
 	<stringbundleset id="stringbundleset">
@@ -94,7 +96,11 @@
 				tooltiptext="page counters"
 				label="page counters"
 				type="menu">
-				<menupopup>
+				<menupopup id="mernik-monitor-page-counters-container">
+					<!--<menuitem>
+						<image src="chrome://mernik_monitor_dev/skin/mernik_counter_logo.png" /><label value="mernik" />
+					</menuitem>
+					-->
 				</menupopup>
 			</toolbarbutton>
 		</toolbaritem>

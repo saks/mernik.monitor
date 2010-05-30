@@ -102,6 +102,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		*/
 		onDomReady: function(DOMWindow) {
 			this.ui.setState(this.pageAnalizer.getState(DOMWindow));
+			this.ui.fillCounters(this.pageAnalizer.getPageCountes(DOMWindow));
 		}
 
 	}; /* end of prototype definition */
