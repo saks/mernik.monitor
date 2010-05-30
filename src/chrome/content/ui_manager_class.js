@@ -110,7 +110,8 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					var menuitem = document.createElement('menuitem'),
 						image      = document.createElement('image'),
 						label      = document.createElement('label'),
-						imageURI   = imageSrcPrefix + counter.name + "_counter_logo.png";
+						oncommand  = counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")
+						imageURI   = counter.imageURI || (imageSrcPrefix + counter.name + "_counter_logo.png");
 
 					image.setAttribute('src', imageURI);
 					label.setAttribute('value', counter.name);
@@ -118,7 +119,7 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					menuitem.appendChild(image);
 					menuitem.appendChild(label);
 
-					menuitem.setAttribute('oncommand', "gBrowser.addTab('" + counter.statURL + "')");
+					menuitem.setAttribute('oncommand', oncommand);
 
 					container.appendChild(menuitem);
 				})
