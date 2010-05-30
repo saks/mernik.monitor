@@ -55,8 +55,13 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					this.statURL = 'http://top.mail.ru/rating?id=' + siteId[1];
 
 				} else if ('rambler' == this.id) {
-					let siteId = this.constructor.RAMBLER_RE.exec(params.pageHTML)[1];
-					this.statURL = 'http://top100.rambler.ru/resStats/' + siteId;
+					/* rambler counter */
+					let siteId = this.constructor.RAMBLER_RE.exec(params.pageHTML);
+					if (!siteId) {
+						siteId = this.constructor.RAMBLER_RE1.exec(params.pageHTML)
+					};
+
+					this.statURL = 'http://top100.rambler.ru/resStats/' + siteId[1];
 
 				} else if ('hotlog' == this.id) {
 					let siteId = this.constructor.HOTLOG_RE.exec(params.pageHTML)[1];
@@ -75,7 +80,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			[/adlik\.akavita\.com\/bin\/lik/,'akavita'],
 			[/LiveInternet/i,                     'li'],
 			[/top\.mail\.ru\/jump/,           'mailru'],
-			[/counter\.rambler\.ru\/top100/, 'rambler'],
+			[/rambler\.ru\/top100/,          'rambler'],
 			[/click\.hotlog\.ru/,             'hotlog'],
 			[/spylog\.com\/cnt\?cid/,         'spylog']
 		];
@@ -111,6 +116,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		Mernik._PageCounterClass.MAILRU_RE  = /top\.list\.ru.*id=(\d+)/;
 		Mernik._PageCounterClass.MAILRU_RE1 = /jump\?from=(\d+)/;
 		Mernik._PageCounterClass.RAMBLER_RE = /counter\.rambler\.ru\/top100\.cnt\?(\d+)/;
+		Mernik._PageCounterClass.RAMBLER_RE1 = /rambler\.ru\/top100\.jcn\?(\d+)/;
 		Mernik._PageCounterClass.HOTLOG_RE  = /click\.hotlog\.ru\/\?(\d+)/;
 		Mernik._PageCounterClass.SPYLOG_RE  = /spylog\.com\/cnt\?cid=(\d+)/;
 
