@@ -3,7 +3,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		//TODO: add support for zero.kz
 
 		var MernikNamespace = globalNamespace.Mernik,
-			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler', 'hotlog'];
+			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler', 'hotlog', 'spylog'];
 
 		Mernik._PageCounterClass = function(id, params) {
 			if (supportedIDS.indexOf(id) == -1)
@@ -61,6 +61,10 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 				} else if ('hotlog' == this.id) {
 					let siteId = this.constructor.HOTLOG_RE.exec(params.pageHTML)[1];
 					this.statURL = 'http://hotlog.ru/viewstat?id=' + siteId;
+
+				} else if ('spylog' == this.id) {
+					let siteId = this.constructor.SPYLOG_RE.exec(params.pageHTML)[1];
+					this.statURL = 'http://rating.openstat.ru/site/' + siteId;
 				}
 			}
 
@@ -72,7 +76,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			[/LiveInternet/i,                     'li'],
 			[/top\.mail\.ru\/jump/,           'mailru'],
 			[/counter\.rambler\.ru\/top100/, 'rambler'],
-			[/click\.hotlog\.ru/,             'hotlog']
+			[/click\.hotlog\.ru/,             'hotlog'],
+			[/spylog\.com\/cnt\?cid/,         'spylog']
 		];
 
 		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
@@ -107,6 +112,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		Mernik._PageCounterClass.MAILRU_RE1 = /jump\?from=(\d+)/;
 		Mernik._PageCounterClass.RAMBLER_RE = /counter\.rambler\.ru\/top100\.cnt\?(\d+)/;
 		Mernik._PageCounterClass.HOTLOG_RE  = /click\.hotlog\.ru\/\?(\d+)/;
+		Mernik._PageCounterClass.SPYLOG_RE  = /spylog\.com\/cnt\?cid=(\d+)/;
 
 	}(window))
 }
