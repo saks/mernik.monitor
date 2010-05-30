@@ -110,11 +110,13 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					var menuitem = document.createElement('menuitem'),
 						image      = document.createElement('image'),
 						label      = document.createElement('label'),
-						oncommand  = counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")
-						imageURI   = counter.imageURI || (imageSrcPrefix + counter.name + "_counter_logo.png");
+						oncommand  = (counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")),
+						imageURI   = (counter.imageURI || (imageSrcPrefix + counter.id + "_counter_logo.png"));
+
+					log()
 
 					image.setAttribute('src', imageURI);
-					label.setAttribute('value', counter.name);
+					label.setAttribute('value', counter.id);
 
 					menuitem.appendChild(image);
 					menuitem.appendChild(label);
