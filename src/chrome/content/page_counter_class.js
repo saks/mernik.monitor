@@ -16,15 +16,19 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			init: function(params) {
 				if ('unknown' == this.id) {
 					/* unknown state for mernik monitor */
-					this.name    = 'unknown'
-					this.siteId  = -1;
-					this.statURL = '';
+					this.name      = 'unknown'
+					this.siteId    = -1;
+					this.statURL   = '';
+					this.oncommand = '';
+					this.imageURI  = 'chrome://global/skin/icons/question-16.png';
 
 				} else if ('loading' == this.id) {
 					/* loading state for mernik monitor */
-					this.name    = 'loading'
-					this.siteId  = -1;
-					this.statURL = '';
+					this.name      = 'loading'
+					this.siteId    = -1;
+					this.statURL   = '';
+					this.oncommand = '';
+					this.imageURI  = 'chrome://global/skin/icons/loading_16.png';
 
 				} else if ('mernik' == this.id) {
 					/* mernik counter */
