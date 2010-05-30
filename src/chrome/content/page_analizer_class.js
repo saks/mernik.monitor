@@ -48,7 +48,7 @@ if ('undefined' == typeof(Mernik._PageAnalizerClass)) {
 			/*
 			* Analizes page and returns new mernik monitor status
 			*/
-			getState: function(DOMWindow) {
+			getCounterState: function(DOMWindow) {
 				var _window_   = DOMWindow.wrappedJSObject,
 				    _document_ = _window_.document,
 				    newState   = {};

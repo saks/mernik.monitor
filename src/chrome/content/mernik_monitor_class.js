@@ -101,7 +101,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		* Fires when all dom content is loaded
 		*/
 		onDomReady: function(DOMWindow) {
-			this.ui.setState(this.pageAnalizer.getState(DOMWindow));
+			this.ui.setState(this.pageAnalizer.getCounterState(DOMWindow));
 			this.ui.fillCounters(this.pageAnalizer.getPageCountes(DOMWindow));
 		}
 
