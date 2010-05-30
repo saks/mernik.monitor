@@ -76,7 +76,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		};
 
 		var couterSearchCriteria = [
-			[/mernik\scounter/,               'mernik'],
+			[/s3\.countby\.com\/cnt\?id/,     'mernik'],
 			[/adlik\.akavita\.com\/bin\/lik/,'akavita'],
 			[/LiveInternet/i,                     'li'],
 			[/top\.mail\.ru\/jump/,           'mailru'],
