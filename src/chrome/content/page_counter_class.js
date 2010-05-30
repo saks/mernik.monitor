@@ -3,7 +3,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		//TODO: add support for zero.kz
 
 		var MernikNamespace = globalNamespace.Mernik,
-			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler'];
+			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler', 'hotlog'];
 
 		Mernik._PageCounterClass = function(id, params) {
 			if (supportedIDS.indexOf(id) == -1)
@@ -58,6 +58,9 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					let siteId = this.constructor.RAMBLER_RE.exec(params.pageHTML)[1];
 					this.statURL = 'http://top100.rambler.ru/resStats/' + siteId;
 
+				} else if ('hotlog' == this.id) {
+					let siteId = this.constructor.HOTLOG_RE.exec(params.pageHTML)[1];
+					this.statURL = 'http://hotlog.ru/viewstat?id=' + siteId;
 				}
 			}
 
@@ -69,7 +72,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			[/LiveInternet/i,                     'li'],
 			[/top\.list\.ru\/counter/,        'mailru'],
 			[/top\.mail\.ru\/jump/,           'mailru'],
-			[/counter\.rambler\.ru\/top100/, 'rambler']
+			[/counter\.rambler\.ru\/top100/, 'rambler'],
+			[/click\.hotlog\.ru/,             'hotlog']
 		];
 
 		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
@@ -103,6 +107,7 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		Mernik._PageCounterClass.MAILRU_RE  = /top\.list\.ru.*id=(\d+)/;
 		Mernik._PageCounterClass.MAILRU_RE1 = /jump\?from=(\d+)/;
 		Mernik._PageCounterClass.RAMBLER_RE = /counter\.rambler\.ru\/top100\.cnt\?(\d+)/;
+		Mernik._PageCounterClass.HOTLOG_RE  = /click\.hotlog\.ru\/\?(\d+)/;
 
 	}(window))
 }
