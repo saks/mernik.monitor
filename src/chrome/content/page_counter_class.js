@@ -68,9 +68,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 
 		var couterSearchCriteria = [
 			[/mernik\scounter/,               'mernik'],
-			[/Akavita\scounter/,             'akavita'],
+			[/adlik\.akavita\.com\/bin\/lik/,'akavita'],
 			[/LiveInternet/i,                     'li'],
-			[/top\.list\.ru\/counter/,        'mailru'],
 			[/top\.mail\.ru\/jump/,           'mailru'],
 			[/counter\.rambler\.ru\/top100/, 'rambler'],
 			[/click\.hotlog\.ru/,             'hotlog']
