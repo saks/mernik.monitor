@@ -1,22 +1,5 @@
 if ('undefined' == typeof(Mernik._MonitorClass)) {
-	function log(text) {
-		var result = "";
 
-		if ('string' == typeof(text)) {
-			result += text
-		} else if ('object' == typeof(text)) {
-			var pairs = [];
-			for (k in text) {
-				pairs.push("" + k + ": " + text[k])
-			}
-			result += ("<" + text.constructor + "> [" + pairs.join(', ') + "]")
-		} else {
-			result += "unknown type: " + typeof(text)
-		};
-
-		dump(result); dump("\n")
-
-	}
 
 	Mernik._MonitorClass = function() {
 		this.init();
