@@ -7,9 +7,9 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			if (supportedIDS.indexOf(id) == -1)
 				throw new Error("Unsupported counter id: " + id)
 
-			this.id = id;
-			this.init(params);
+			this.id          = id;
 			this.constructor = Mernik._PageCounterClass;
+			this.init(params);
 		};
 
 		Mernik._PageCounterClass.prototype = {
@@ -35,8 +35,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					this.siteId  = params.window.AC_ID;
 
 					/* parce site id from page source for old counter version */
-					if (!this.siteId && Mernik._PageCounterClass.AKAVITA_RE1.test(params.pageHTML)) {
-						this.siteId = Mernik._PageCounterClass.AKAVITA_RE1.exec(params.pageHTML)[1];
+					if (!this.siteId && this.constructor.AKAVITA_RE1.test(params.pageHTML)) {
+						this.siteId = this.constructor.AKAVITA_RE1.exec(params.pageHTML)[1];
 					};
 
 					this.statURL = 'http://stat.akavita.com/stat/stat.pl?id=' + this.siteId + '&lang=ru';
