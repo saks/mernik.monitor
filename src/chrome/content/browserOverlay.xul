@@ -15,13 +15,13 @@
 	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/mernik_browser.js" />
 	<script type="application/x-javascript"
+		src="chrome://mernik_monitor_dev/content/page_counter_class.js" />
+	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/ui_manager_class.js" />
 	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/page_analizer_class.js" />
 	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/mernik_monitor_class.js" />
-	<script type="application/x-javascript"
-		src="chrome://mernik_monitor_dev/content/page_counter_class.js" />
 	<script type="application/x-javascript"
 		src="chrome://mernik_monitor_dev/content/browserOverlay.js" />
 
