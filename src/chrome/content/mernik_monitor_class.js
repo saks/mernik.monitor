@@ -101,8 +101,15 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		* Fires when all dom content is loaded
 		*/
 		onDomReady: function(DOMWindow) {
-			this.ui.setState(this.pageAnalizer.getCounterState(DOMWindow));
-			this.ui.fillCounters(this.pageAnalizer.getPageCountes(DOMWindow));
+			var pageCounters = this.pageAnalizer.getPageCountes(DOMWindow);
+			if (0 == pageCounters.length) {
+				pageCounters = [new Mernik._PageCounterClass('unknown', {})]
+			};
+
+			this.ui.setState({
+				counterState: this.pageAnalizer.getCounterState(DOMWindow),
+				pageCounters: pageCounters
+			});
 		}
 
 	}; /* end of prototype definition */
