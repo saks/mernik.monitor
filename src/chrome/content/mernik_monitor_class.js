@@ -29,7 +29,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 
 					if (!!(aFlag & Mernik.Browser.STATE_START) &&
 							!!(aFlag & Mernik.Browser.STATE_IS_WINDOW)) {
-						//log('START:' + aFlag)
+						log('WINDOW STATE START')
 						self.startLoading();
 						return
 					};
@@ -37,7 +37,7 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 					if (!!(aFlag & Mernik.Browser.STATE_STOP) &&
 							!!(aFlag & Mernik.Browser.STATE_IS_WINDOW)) {
 						self.onDomReady(aProgress.DOMWindow);
-						//log('STOP:' + aFlag)
+						log('WINDOW STATE STOP')
 						return
 					};
 
@@ -56,6 +56,8 @@ if ('undefined' == typeof(Mernik._MonitorClass)) {
 		initTabListener: function() {
 			var self = this;
 			gBrowser.tabContainer.addEventListener("TabSelect", function(event) {
+				log('TAB SELECTED');
+
 				var _browser_  = gBrowser.getBrowserForTab(event.target),
 					_window_   = _browser_.contentWindow,
 					loadingNow = _browser_.webProgress.isLoadingDocument;
