@@ -40,50 +40,65 @@
 				label="counter status"
 				type="menu">
 
-			<menupopup id="mernik-monitor-counter-info-popup">
-				<listbox id="mernik-monitor-counter-info-popup-list" rows="6" width="470">
-					<listcols>
-						<listcol/>
-						<listcol flex="1" width="50"/>
-					</listcols>
-					<listitem>
-						<listcell label="&mernik.monitor.counterState.counterPresents;"></listcell>
-						<listcell><image
-								id="mernik-monitor-counter-info-popup-list-item-counterPresents"
-								src="chrome://mernik_monitor_dev/skin/unknown.png" />
-						</listcell>
-					</listitem>
-					<listitem>
-						<listcell label="&mernik.monitor.counterState.containerPresents;"></listcell>
-						<listcell><image
-							src="chrome://mernik_monitor_dev/skin/unknown.png"
-							id="mernik-monitor-counter-info-popup-list-item-containerPresents"/>
-						</listcell>
-					</listitem>
-					<listitem>
-						<listcell label="&mernik.monitor.counterState.imageLoaded;"></listcell>
-						<listcell><image
-							src="chrome://mernik_monitor_dev/skin/unknown.png"
-							id="mernik-monitor-counter-info-popup-list-item-imageLoaded" />
-						</listcell>
-					</listitem>
-					<listitem>
-						<listcell label="&mernik.monitor.counterState.scriptLoaded;"></listcell>
-						<listcell><image
-							src="chrome://mernik_monitor_dev/skin/unknown.png"
-							id="mernik-monitor-counter-info-popup-list-item-scriptLoaded" />
-						</listcell>
-					</listitem>
-					<listitem>
-						<listcell label="&mernik.monitor.counterState.siteId;"></listcell>
-						<listcell
-							id="mernik-monitor-counter-info-popup-list-item-siteId"
-							label="-1"><label value="xxx"/></listcell>
-					</listitem>
-				</listbox>
-			</menupopup>
-		</toolbarbutton>
+				<menupopup id="mernik-monitor-counter-info-popup">
+					<listbox id="mernik-monitor-counter-info-popup-list" rows="6" width="470">
+						<listcols>
+							<listcol/>
+							<listcol flex="1" width="50"/>
+						</listcols>
+						<listitem>
+							<listcell label="&mernik.monitor.counterState.counterPresents;"></listcell>
+							<listcell><image
+									id="mernik-monitor-counter-info-popup-list-item-counterPresents"
+									src="chrome://mernik_monitor_dev/skin/unknown.png" />
+							</listcell>
+						</listitem>
+						<listitem>
+							<listcell label="&mernik.monitor.counterState.containerPresents;"></listcell>
+							<listcell><image
+								src="chrome://mernik_monitor_dev/skin/unknown.png"
+								id="mernik-monitor-counter-info-popup-list-item-containerPresents"/>
+							</listcell>
+						</listitem>
+						<listitem>
+							<listcell label="&mernik.monitor.counterState.imageLoaded;"></listcell>
+							<listcell><image
+								src="chrome://mernik_monitor_dev/skin/unknown.png"
+								id="mernik-monitor-counter-info-popup-list-item-imageLoaded" />
+							</listcell>
+						</listitem>
+						<listitem>
+							<listcell label="&mernik.monitor.counterState.scriptLoaded;"></listcell>
+							<listcell><image
+								src="chrome://mernik_monitor_dev/skin/unknown.png"
+								id="mernik-monitor-counter-info-popup-list-item-scriptLoaded" />
+							</listcell>
+						</listitem>
+						<listitem>
+							<listcell label="&mernik.monitor.counterState.siteId;"></listcell>
+							<listcell
+								id="mernik-monitor-counter-info-popup-list-item-siteId"
+								label="-1"><label value="-1"/></listcell>
+						</listitem>
+					</listbox>
+				</menupopup>
+			</toolbarbutton>
 		</toolbaritem>
+
+
+		<!-- button with menu to display all counters found on this page -->
+		<toolbaritem id="mernik-monitor-page-counters-toolbaritem">
+			<toolbarbutton
+				id="mernik-monitor-page-counters"
+				class="chromeclass-toolbar-additional"
+				tooltiptext="page counters"
+				label="page counters"
+				type="menu">
+				<menupopup>
+				</menupopup>
+			</toolbarbutton>
+		</toolbaritem>
+
 	</toolbarpalette>
 </overlay>
 

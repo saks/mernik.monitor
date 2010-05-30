@@ -24,3 +24,13 @@
 	list-style-image: url("chrome://global/skin/icons/loading_16.png");
 }
 
+
+/* page counters toolbaritem styles */
+#mernik-monitor-page-counters {
+	list-style-image: url("chrome://mernik_monitor_dev/skin/page_counters.png");
+}
+
+toolbar[iconsize="small"] #mernik-monitor-page-counters {
+	list-style-image: url("chrome://mernik_monitor_dev/skin/page_counters_small.png");
+}
+
