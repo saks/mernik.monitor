@@ -124,14 +124,23 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 				/* fill new popup with counter links */
 				pageCounters.forEach(function(counter){
 					var menuitem = document.createElement('menuitem'),
+						bundle     = $('mernik_monitor_dev-string-bundle'),
 						image      = document.createElement('image'),
 						label      = document.createElement('label'),
+						labelValue = counter.id,
 						disabled   = (counter.disabled || false),
 						oncommand  = (counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")),
 						imageURI   = (counter.imageURI || (imageSrcPrefix + counter.id + "_counter_logo.png"));
 
+					try {
+						labelValue = bundle.getString('mernikMonitor.pageCounters.status.' + counter.id);
+					} catch(error) {
+						log(error.message);
+					};
+
+
 					image.setAttribute('src', imageURI);
-					label.setAttribute('value', counter.id);
+					label.setAttribute('value', labelValue);
 
 					menuitem.appendChild(image);
 					menuitem.appendChild(label);
@@ -156,6 +165,9 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 			return document.getElementById(id);
 		};
 
+		function getString(key) {
+			$('mernik_monitor_dev-string-bundle').getString(key);
+		}
 
 		/*
 		* Returns uri for state image
