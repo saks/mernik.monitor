@@ -5,4 +5,5 @@
 <!ENTITY mernik.monitor.counterState.siteId "id сайта">
 <!ENTITY mernik.monitor.counterState "статус счётчика mernik">
 <!ENTITY mernik.monitor.pageCounters "счётчики на странице">
+<!ENTITY mernik.monitor.pageCounters.state.unknown "нет данных">
 
