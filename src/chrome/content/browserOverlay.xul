@@ -28,8 +28,6 @@
 	<stringbundleset id="stringbundleset">
 		<stringbundle id="mernik_monitor_dev-string-bundle"
 			src="chrome://mernik_monitor_dev/locale/browserOverlay.properties" />
-		<stringbundle id="mernik-monitor-string-bundle"
-			src="chrome://mernik_monitor_dev/locale/mernikMonitor.properties" />
 	</stringbundleset>
 
 	<toolbarpalette id="BrowserToolbarPalette">
