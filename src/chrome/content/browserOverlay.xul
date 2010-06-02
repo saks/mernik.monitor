@@ -38,8 +38,8 @@
 			<toolbarbutton
 				id="mernik-monitor-counter-status-on-page"
 				class="chromeclass-toolbar-additional status_unknown"
-				tooltiptext="counter status"
-				label="counter status"
+				tooltiptext="&mernik.monitor.counterState;"
+				label="&mernik.monitor.counterState;"
 				type="menu">
 
 				<menupopup id="mernik-monitor-counter-info-popup">
@@ -93,8 +93,8 @@
 			<toolbarbutton
 				id="mernik-monitor-page-counters"
 				class="chromeclass-toolbar-additional"
-				tooltiptext="page counters"
-				label="page counters"
+				tooltiptext="&mernik.monitor.pageCounters;"
+				label="&mernik.monitor.pageCounters;"
 				type="menu">
 				<menupopup id="mernik-monitor-page-counters-container">
 					<menuitem>
