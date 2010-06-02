@@ -78,6 +78,9 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 				var button = $('mernik-monitor-counter-status-on-page'),
 					newClass = 'status_' + state;
 
+				//do nothing if there is no button on the toolbar
+				if (!button) return;
+
 				availableStatuses.forEach(function(status){
 					button.classList.remove('status_' + status);
 				});
@@ -89,6 +92,9 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 			* Updated popup with data object containing all necessary data
 			*/
 			updatePopup: function(state) {
+				//do nothing if there is no button on the toolbar
+				if (!$('mernik-monitor-toolbar-item')) return;
+
 				var idPrefix = 'mernik-monitor-counter-info-popup-list-item-';
 
 				['counterPresents', 'containerPresents',
@@ -105,6 +111,10 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 				/* remove popup with previos result */
 				var toolbarbutton = $('mernik-monitor-page-counters'),
 					popupID = 'mernik-monitor-page-counters-container';
+
+				//do nothing if there is no button on the toolbar
+				if (!toolbarbutton) return;
+
 				toolbarbutton.removeChild($(popupID));
 
 				/* create new popup for counter links */
