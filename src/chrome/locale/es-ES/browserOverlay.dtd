@@ -1,0 +1,9 @@
+<!ENTITY mernik.monitor.counterState.counterPresents "código del contador presenta en la página">
+<!ENTITY mernik.monitor.counterState.containerPresents "contenedor de código del contador presenta en la página">
+<!ENTITY mernik.monitor.counterState.imageLoaded "imágenes cargadas contra">
+<!ENTITY mernik.monitor.counterState.scriptLoaded "biblioteca de contadores de carga">
+<!ENTITY mernik.monitor.counterState.siteId "ID del sitio">
+<!ENTITY mernik.monitor.counterState "situación de la lucha contra mernik">
+<!ENTITY mernik.monitor.pageCounters "contador en la página">
+<!ENTITY mernik.monitor.pageCounters.state.unknown "sin datos disponibles">
+
