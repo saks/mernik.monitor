@@ -95,8 +95,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			[/rambler\.ru\/top100/,          'rambler'],
 			[/click\.hotlog\.ru/,             'hotlog'],
 			[/spylog\.com\/cnt\?cid/,         'spylog'],
-			[/ga\.js/,              'google-analytics'],
-			[/zero\.kz\/c\.php/,              'zerokz']
+			[/zero\.kz\/c\.php/,              'zerokz'],
+			[/ga\.js/,              'google-analytics']
 		];
 
 		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
