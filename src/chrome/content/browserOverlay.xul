@@ -96,7 +96,8 @@
 				type="menu">
 				<menupopup id="mernik-monitor-page-counters-container">
 					<menuitem disabled="true" >
-						<image src="chrome://global/skin/icons/question-16.png" /><label value="unknown" />
+						<image src="chrome://global/skin/icons/question-16.png" />
+						<label value="&mernik.monitor.pageCounters.state.unknown;" />
 					</menuitem>
 				</menupopup>
 			</toolbarbutton>
