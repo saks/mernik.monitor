@@ -1,6 +1,7 @@
 content   mernik_monitor_dev              jar:chrome/mernik_monitor_dev.jar!/content/
 skin      mernik_monitor_dev  classic/1.0 jar:chrome/mernik_monitor_dev.jar!/skin/
 locale    mernik_monitor_dev  en-US       jar:chrome/mernik_monitor_dev.jar!/locale/en-US/
+locale    mernik_monitor_dev  ru-RU       jar:chrome/mernik_monitor_dev.jar!/locale/ru-RU/
 
 style chrome://global/content/customizeToolbar.xul chrome://mernik_monitor_dev/skin/all.css
 

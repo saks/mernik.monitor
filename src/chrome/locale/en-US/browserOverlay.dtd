@@ -1,9 +1,9 @@
-<!ENTITY mernik.monitor.counterState.counterPresents "код счётчика присуствует на странице">
-<!ENTITY mernik.monitor.counterState.containerPresents "контейнер для картинки счётчика присуствует на странице">
-<!ENTITY mernik.monitor.counterState.imageLoaded "картинка счётчика загружена">
-<!ENTITY mernik.monitor.counterState.scriptLoaded "библиотека счётчика загружена">
-<!ENTITY mernik.monitor.counterState.siteId "id сайта">
-<!ENTITY mernik.monitor.counterState "статус счётчика mernik">
-<!ENTITY mernik.monitor.pageCounters "счётчики на странице">
-<!ENTITY mernik.monitor.pageCounters.state.unknown "нет данных">
+<!ENTITY mernik.monitor.counterState.counterPresents "counter code presents on the page">
+<!ENTITY mernik.monitor.counterState.containerPresents "counter code container presents on the page">
+<!ENTITY mernik.monitor.counterState.imageLoaded "counter images loaded">
+<!ENTITY mernik.monitor.counterState.scriptLoaded "counter library loaded">
+<!ENTITY mernik.monitor.counterState.siteId "site id">
+<!ENTITY mernik.monitor.counterState "status of mernik counter">
+<!ENTITY mernik.monitor.pageCounters "counter on the page">
+<!ENTITY mernik.monitor.pageCounters.state.unknown "no data available">
 
