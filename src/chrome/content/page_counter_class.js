@@ -3,7 +3,9 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 		//TODO: add support for zero.kz
 
 		var MernikNamespace = globalNamespace.Mernik,
-			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li', 'mailru', 'rambler', 'hotlog', 'spylog'];
+			supportedIDS = ['unknown', 'loading', 'mernik', 'akavita', 'li',
+				'mailru', 'rambler', 'hotlog', 'spylog', 'google-analytics'
+			];
 
 		Mernik._PageCounterClass = function(id, params) {
 			if (supportedIDS.indexOf(id) == -1)
@@ -29,6 +31,11 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 					this.statURL   = undefined;
 					this.oncommand = 'void 0';
 					this.imageURI  = 'chrome://global/skin/icons/loading_16.png';
+
+				} else if ('google-analytics' == this.id) {
+					this.disabled  = true;
+					this.statURL   = undefined;
+					this.oncommand = 'void 0';
 
 				} else if ('mernik' == this.id) {
 					/* mernik counter */
@@ -84,7 +91,8 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			[/top\.mail\.ru\/jump/,           'mailru'],
 			[/rambler\.ru\/top100/,          'rambler'],
 			[/click\.hotlog\.ru/,             'hotlog'],
-			[/spylog\.com\/cnt\?cid/,         'spylog']
+			[/spylog\.com\/cnt\?cid/,         'spylog'],
+			[/ga\.js/,              'google-analytics']
 		];
 
 		Mernik._PageCounterClass.getPageCountes = function(DOMWindow) {
