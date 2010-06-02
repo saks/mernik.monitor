@@ -18,12 +18,14 @@ if ('undefined' == typeof(Mernik._PageCounterClass)) {
 			init: function(params) {
 				if ('unknown' == this.id) {
 					/* unknown state for mernik monitor */
+					this.disabled  = true;
 					this.statURL   = undefined;
 					this.oncommand = 'void 0';
 					this.imageURI  = 'chrome://global/skin/icons/question-16.png';
 
 				} else if ('loading' == this.id) {
 					/* loading state for mernik monitor */
+					this.disabled  = true;
 					this.statURL   = undefined;
 					this.oncommand = 'void 0';
 					this.imageURI  = 'chrome://global/skin/icons/loading_16.png';

@@ -126,6 +126,7 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					var menuitem = document.createElement('menuitem'),
 						image      = document.createElement('image'),
 						label      = document.createElement('label'),
+						disabled   = (counter.disabled || false),
 						oncommand  = (counter.oncommand || ("gBrowser.addTab('" + counter.statURL + "')")),
 						imageURI   = (counter.imageURI || (imageSrcPrefix + counter.id + "_counter_logo.png"));
 
@@ -136,6 +137,7 @@ if ('undefined' == typeof(Mernik._UIManagerClass)) {
 					menuitem.appendChild(label);
 
 					menuitem.setAttribute('oncommand', oncommand);
+					menuitem.setAttribute('disabled', disabled);
 
 					container.appendChild(menuitem);
 				})
